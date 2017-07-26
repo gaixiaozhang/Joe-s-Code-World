@@ -1,0 +1,36 @@
+Function[x,f]=zuiyouhua(A,b,c)
+Size(A)=[m,n];
+i=n+1:n+m;
+N=1:n;
+B=eye(m,m);
+xb=b';
+xn=zeros(m,1);
+f1=0;
+w=zeros(1,m);
+z=-c;
+flag=1;
+while(1)
+   [a,k]=max(z);
+   If a<=0
+      flag=0;
+      break
+   else 
+      y=inv(B)*A(:,k)
+      if y<=0
+         flag=0;
+         fprintf('不存在最优解')
+         break
+end 
+  t=find(y>0);
+[a,rl]=min(bl(t)/y(t))
+r=t(rl);
+i(:,k)=k
+B(:,k)=A(:,k);
+cb=C(:,i);
+xb=inv(B)*b;
+b0=xb;
+x=zeros(1,n+m)
+x(:,i)=xb'
+f=cb*xb
+z=cb*inv(B)*A-C;
+end
